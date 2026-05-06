@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>Dr. Thyago Henrique — Brand Bible</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============= TOKENS ============= */
+:root{
+  color-scheme: light only;
+  --bone: #F5F3EE;
+  --bone-2: #EAE6DC;
+  --bone-3: #DDD7C7;
+  --ink: #0A0A0A;
+  --ink-soft: #1F1F1F;
+  --stone: #4A4639;
+  --line: #B8B0A0;
+  --eucalyptus: #1F3A2E;
+  --eucalyptus-deep: #142420;
+  --eucalyptus-soft: #7FA890;
+  --sienna: #9C3415;
+  --gold: #8A6F3F;
+  --display: 'Fraunces', serif;
+  --serif-italic: 'Instrument Serif', serif;
+  --sans: 'Geist', system-ui, sans-serif;
+  --mono: 'Geist Mono', monospace;
+}
+
+*{margin:0; padding:0; box-sizing:border-box}
+html{scroll-behavior: smooth;}
+body{
+  font-family: var(--sans);
+  background: var(--bone);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============= SHARED ============= */
+section{
+  position: relative;
+  padding: 140px 0;
+  overflow: hidden;
+}
+.wrap{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+.section-num{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 48px;
+  color: currentColor;
+  opacity: 0.7;
+}
+.section-num::after{
+  content:'';
+  width: 64px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+}
+h1, h2, h3{font-weight: 400;}
+h2.title{
+  font-family: var(--display);
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+  margin-bottom: 56px;
+  font-weight: 350;
+}
+h2.title em{
+  font-style: italic;
+  color: var(--eucalyptus);
+}
+.lede{
+  font-family: var(--display);
+  font-size: 22px;
+  line-height: 1.45;
+  font-weight: 400;
+  max-width: 620px;
+  color: var(--ink-soft);
+}
+.dark{background: var(--ink); color: var(--bone);}
+.dark .lede{color: rgba(245,243,238,.92);}
+.dark h2.title em{color: var(--eucalyptus-soft);}
+
+/* ============= COVER ============= */
+.cover{
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--bone);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 56px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before{
+  content:'';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 40%, rgba(31,58,46,.45), transparent 65%);
+  pointer-events: none;
+}
+.cover-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.cover-top span{opacity: 0.7;}
+.cover-title{
+  position: relative;
+  z-index: 2;
+  margin: auto 0;
+}
+.cover-eyebrow{
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--eucalyptus-soft);
+  margin-bottom: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+.cover-eyebrow::before{
+  content:'';
+  width: 40px; height: 1px;
+  background: var(--eucalyptus-soft);
+}
+.cover h1{
+  font-family: var(--display);
+  font-size: clamp(72px, 11vw, 180px);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+  max-width: 1200px;
+}
+.cover h1 em{
+  font-style: italic;
+  color: var(--eucalyptus-soft);
+  font-weight: 350;
+}
+.cover-bottom{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.cover-meta{display: flex; gap: 56px;}
+.cover-meta div{opacity: 0.7;}
+.cover-meta strong{display: block; color: var(--bone); font-weight: 500; margin-top: 6px; opacity: 1;}
+
+/* ============= INDEX ============= */
+.index{
+  background: var(--ink);
+  color: var(--bone);
+  padding: 100px 0;
+}
+.index-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid rgba(245,243,238,.15);
+}
+.idx-row{
+  display: grid;
+  grid-template-columns: 60px 1fr 100px;
+  gap: 24px;
+  padding: 24px 56px;
+  border-bottom: 1px solid rgba(245,243,238,.15);
+  align-items: center;
+  transition: background 0.2s;
+}
+.idx-row:hover{background: rgba(31,58,46,.3);}
+.idx-num{
+  font-family: var(--mono);
+  font-size: 11px;
+  opacity: 0.5;
+}
+.idx-name{
+  font-family: var(--display);
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+.idx-tag{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  text-align: right;
+}
+
+/* ============= THESIS ============= */
+.thesis-grid{
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  gap: 96px;
+  align-items: start;
+}
+.thesis-statement{
+  font-family: var(--display);
+  font-size: clamp(32px, 3.5vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 350;
+}
+.thesis-statement em{font-style: italic; color: var(--eucalyptus);}
+.thesis-aside{
+  border-left: 1px solid var(--line);
+  padding-left: 32px;
+}
+.thesis-aside p{
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--stone);
+}
+.thesis-aside p strong{color: var(--ink); font-weight: 500;}
+
+/* ============= ENEMY ============= */
+.enemy{background: var(--ink); color: var(--bone);}
+.enemy-headline{
+  font-family: var(--display);
+  font-size: clamp(60px, 8vw, 120px);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  font-weight: 300;
+  margin-bottom: 80px;
+  max-width: 1100px;
+}
+.enemy-headline em{font-style: italic; color: var(--eucalyptus-soft);}
+.enemy-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(245,243,238,.12);
+  border: 1px solid rgba(245,243,238,.12);
+}
+.enemy-card{
+  background: var(--ink);
+  padding: 40px 32px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.enemy-stage{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--eucalyptus-soft);
+}
+.enemy-name{
+  font-family: var(--display);
+  font-size: 32px;
+  line-height: 1.05;
+  font-weight: 350;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+.enemy-name em{font-style: italic;}
+.enemy-desc{
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(245,243,238,.75);
+}
+.enemy-score{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  margin-top: 24px;
+  opacity: 0.6;
+  border-top: 1px solid rgba(245,243,238,.15);
+  padding-top: 16px;
+}
+
+/* ============= AUDIENCE ============= */
+.audience-grid{
+  display: grid;
+  grid-template-columns: 0.55fr 0.45fr;
+  gap: 80px;
+  align-items: start;
+}
+.persona-card{
+  background: var(--bone-2);
+  border: 1px solid var(--line);
+  padding: 48px;
+  position: relative;
+}
+.persona-tag{
+  position: absolute;
+  top: -12px;
+  left: 32px;
+  background: var(--eucalyptus);
+  color: var(--bone);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+}
+.persona-name{
+  font-family: var(--display);
+  font-size: 38px;
+  line-height: 1;
+  margin-bottom: 8px;
+  font-weight: 350;
+}
+.persona-meta{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 32px;
+}
+.persona-quote{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--eucalyptus);
+  padding: 4px 0 4px 20px;
+  margin-bottom: 32px;
+}
+.persona-row{
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  align-items: baseline;
+}
+.persona-row:last-child{border:0;}
+.persona-row dt{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.persona-row dd{color: var(--ink-soft); line-height: 1.5;}
+.audience-text h3{
+  font-family: var(--display);
+  font-size: 28px;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  margin-top: 48px;
+  font-weight: 400;
+}
+.audience-text h3:first-child{margin-top: 0;}
+.audience-text p{
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--stone);
+  margin-bottom: 16px;
+}
+
+/* ============= ARCHETYPE ============= */
+.archetype{background: var(--ink); color: var(--bone);}
+.archetype-mix{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(245,243,238,.15);
+  border: 1px solid rgba(245,243,238,.15);
+  margin-bottom: 80px;
+}
+.arch-card{
+  background: var(--ink);
+  padding: 48px 36px;
+  position: relative;
+}
+.arch-card.primary{background: var(--eucalyptus);}
+.arch-percent{
+  font-family: var(--display);
+  font-size: 80px;
+  line-height: 0.9;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+.arch-percent em{font-style: italic;}
+.arch-name{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  opacity: 0.7;
+}
+.arch-tagline{
+  font-family: var(--display);
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 350;
+  font-style: italic;
+}
+.arch-detail{
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(245,243,238,.78);
+}
+.arch-card.primary .arch-detail{color: rgba(245,243,238,.92);}
+.arch-explainer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 56px;
+  border-top: 1px solid rgba(245,243,238,.15);
+  padding-top: 56px;
+}
+.arch-explainer h4{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--eucalyptus-soft);
+  margin-bottom: 16px;
+}
+.arch-explainer p{
+  font-family: var(--display);
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 350;
+}
+
+/* ============= POSITIONING ============= */
+.posit{
+  background: var(--bone-2);
+}
+.posit-statement{
+  font-family: var(--display);
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 350;
+  background: var(--bone);
+  border: 1px solid var(--line);
+  padding: 56px;
+  position: relative;
+  margin-bottom: 64px;
+}
+.posit-statement::before{
+  content:'STATEMENT OFICIAL';
+  position: absolute;
+  top: -12px;
+  left: 32px;
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  padding: 6px 12px;
+}
+.posit-statement em{font-style: italic; color: var(--eucalyptus);}
+.posit-statement strong{color: var(--ink); font-weight: 500;}
+.posit-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.posit-card{
+  background: var(--bone);
+  border: 1px solid var(--line);
+  padding: 32px;
+}
+.posit-card h4{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--eucalyptus);
+  margin-bottom: 16px;
+}
+.posit-card p{
+  font-family: var(--display);
+  font-size: 19px;
+  line-height: 1.35;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+/* ============= VOCABULARY ============= */
+.vocab{background: var(--ink); color: var(--bone);}
+.vocab-system{
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  margin-bottom: 100px;
+  align-items: start;
+}
+.vocab-frame{
+  background: var(--eucalyptus);
+  padding: 56px;
+  position: relative;
+}
+.vocab-frame::before{
+  content:'MECANISMO PROPRIETÁRIO';
+  position: absolute;
+  top: -12px;
+  left: 32px;
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  padding: 6px 12px;
+}
+.vocab-tm{
+  font-family: var(--display);
+  font-size: 64px;
+  line-height: 0.95;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+.vocab-tm em{font-style: italic;}
+.vocab-tm sup{
+  font-family: var(--sans);
+  font-size: 16px;
+  vertical-align: super;
+  font-style: normal;
+  margin-left: 4px;
+  opacity: 0.7;
+}
+.vocab-def{
+  font-family: var(--display);
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 32px;
+  color: rgba(245,243,238,.95);
+}
+.vocab-stages{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(245,243,238,.2);
+  border-top: 1px solid rgba(245,243,238,.2);
+  border-bottom: 1px solid rgba(245,243,238,.2);
+}
+.vocab-stage{
+  background: var(--eucalyptus);
+  padding: 16px 12px;
+  text-align: center;
+}
+.vocab-stage-num{
+  font-family: var(--mono);
+  font-size: 10px;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+.vocab-stage-name{
+  font-family: var(--display);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.2;
+}
+.vocab-aside h3{
+  font-family: var(--display);
+  font-size: 28px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.vocab-aside p{
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(245,243,238,.85);
+  margin-bottom: 16px;
+}
+
+.lex-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(245,243,238,.15);
+  border: 1px solid rgba(245,243,238,.15);
+}
+.lex-col{
+  background: var(--ink);
+  padding: 40px 36px;
+}
+.lex-col.yes{background: var(--eucalyptus-deep);}
+.lex-col.no{background: #2A1410;}
+.lex-head{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lex-head.yes{color: var(--eucalyptus-soft);}
+.lex-head.no{color: #D87F66;}
+.lex-head::before{
+  font-family: var(--display);
+  font-size: 24px;
+  line-height: 1;
+}
+.lex-head.yes::before{content:'+'; color: var(--eucalyptus-soft);}
+.lex-head.no::before{content:'×'; color: #D87F66;}
+.lex-list{list-style: none; columns: 2; column-gap: 32px;}
+.lex-list li{
+  font-family: var(--sans);
+  font-size: 14px;
+  padding: 8px 0;
+  color: rgba(245,243,238,.9);
+  break-inside: avoid;
+}
+
+/* ============= VOICE ============= */
+.voice-pairs{display: flex; flex-direction: column; gap: 56px;}
+.voice-pair{
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+.voice-pair:first-child{border-top: 0;}
+.voice-context{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+  padding-top: 4px;
+}
+.voice-context strong{
+  display: block;
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink);
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+.voice-yes, .voice-no{
+  border-left: 3px solid;
+  padding: 16px 24px;
+  position: relative;
+}
+.voice-yes{
+  border-color: var(--eucalyptus);
+  background: rgba(31,58,46,.04);
+}
+.voice-no{
+  border-color: var(--sienna);
+  background: rgba(156,52,21,.04);
+}
+.voice-label{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+.voice-yes .voice-label{color: var(--eucalyptus);}
+.voice-no .voice-label{color: var(--sienna);}
+.voice-text{
+  font-family: var(--display);
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--ink);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ============= PRINCIPLES ============= */
+.principles{background: var(--ink); color: var(--bone);}
+.principles-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(245,243,238,.15);
+  border: 1px solid rgba(245,243,238,.15);
+}
+.principle{
+  background: var(--ink);
+  padding: 56px 48px;
+  position: relative;
+  min-height: 320px;
+}
+.principle-num{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 80px;
+  line-height: 0.9;
+  color: var(--eucalyptus-soft);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.principle-title{
+  font-family: var(--display);
+  font-size: 32px;
+  line-height: 1.05;
+  font-weight: 350;
+  margin-bottom: 20px;
+}
+.principle-desc{
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(245,243,238,.85);
+  margin-bottom: 20px;
+}
+.principle-rule{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--eucalyptus-soft);
+  border-top: 1px solid rgba(245,243,238,.15);
+  padding-top: 16px;
+  font-style: italic;
+}
+
+/* ============= LOGO ============= */
+.logo-stage{
+  background: var(--bone-2);
+  border: 1px solid var(--line);
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 64px;
+  position: relative;
+}
+.logo-stage.dark{background: var(--ink); border-color: var(--ink);}
+.logo-mark{
+  font-family: var(--display);
+  font-size: 88px;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  text-align: center;
+  font-weight: 300;
+}
+.logo-mark em{font-style: italic; color: var(--eucalyptus);}
+.dark .logo-mark{color: var(--bone);}
+.dark .logo-mark em{color: var(--eucalyptus-soft);}
+.logo-mark .doctor{
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-top: 16px;
+  font-style: normal;
+  color: inherit;
+  opacity: 0.6;
+}
+.logo-stage::after{
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+  content: attr(data-label);
+}
+.dark.logo-stage::after{color: rgba(245,243,238,.5);}
+
+.logo-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+.logo-rule{
+  background: var(--bone);
+  border: 1px solid var(--line);
+  padding: 32px;
+}
+.logo-rule h4{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--eucalyptus);
+  margin-bottom: 12px;
+}
+.logo-rule p{
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--stone);
+}
+
+/* ============= COLOR ============= */
+.color{background: var(--ink); color: var(--bone);}
+.color-hero{
+  margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(245,243,238,.15);
+  border: 1px solid rgba(245,243,238,.15);
+}
+.swatch{
+  aspect-ratio: 16/10;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.swatch.eucalyptus{background: var(--eucalyptus); color: var(--bone);}
+.swatch.ink-block{background: #161614; color: var(--bone);}
+.swatch-name{
+  font-family: var(--display);
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 350;
+}
+.swatch-name em{font-style: italic;}
+.swatch-meta{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.swatch-role{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.color-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(245,243,238,.15);
+  border: 1px solid rgba(245,243,238,.15);
+  margin-bottom: 64px;
+}
+.swatch-sm{
+  aspect-ratio: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.swatch-sm.bone{background: var(--bone); color: var(--ink);}
+.swatch-sm.bone-2{background: var(--bone-2); color: var(--ink);}
+.swatch-sm.stone{background: var(--stone); color: var(--bone);}
+.swatch-sm.sienna{background: var(--sienna); color: var(--bone);}
+.swatch-sm.gold{background: var(--gold); color: var(--bone);}
+.swatch-sm.euc-soft{background: var(--eucalyptus-soft); color: var(--ink);}
+.swatch-sm-name{
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+.swatch-sm-meta{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.color-rules{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  border-top: 1px solid rgba(245,243,238,.15);
+  padding-top: 56px;
+}
+.color-rule h4{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--eucalyptus-soft);
+  margin-bottom: 16px;
+}
+.color-rule p{
+  font-family: var(--display);
+  font-size: 19px;
+  line-height: 1.4;
+  color: rgba(245,243,238,.95);
+  font-weight: 350;
+}
+.color-rule p strong{color: var(--bone); font-weight: 500;}
+
+/* ============= TYPOGRAPHY ============= */
+.type-stack{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.type-row{
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 56px;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+.type-meta{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.type-meta strong{
+  display: block;
+  font-family: var(--display);
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink);
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+.type-meta span{
+  display: block;
+  margin-top: 4px;
+}
+.type-sample{position: relative;}
+.type-display{
+  font-family: var(--display);
+  font-size: 88px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 300;
+}
+.type-display em{font-style: italic; color: var(--eucalyptus);}
+.type-h2{
+  font-family: var(--display);
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 350;
+}
+.type-h2 em{font-style: italic;}
+.type-eyebrow{
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--eucalyptus);
+}
+.type-body{
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  max-width: 580px;
+}
+.type-body strong{font-weight: 500;}
+.type-quote{
+  font-family: var(--serif-italic);
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+
+/* ============= PHOTO ============= */
+.photo{background: var(--bone-2);}
+.photo-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+.photo-card{
+  aspect-ratio: 4/5;
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: var(--bone);
+}
+.photo-card.dim-1{background: linear-gradient(180deg, #3a4d40 0%, #1F3A2E 100%);}
+.photo-card.dim-2{background: linear-gradient(180deg, #2c2926 0%, #161413 100%);}
+.photo-card.dim-3{background: linear-gradient(180deg, #4a4639 0%, #2a2820 100%);}
+.photo-card::before{
+  content:attr(data-scene);
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,243,238,.5);
+}
+.photo-card-cap{
+  font-family: var(--display);
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 350;
+  font-style: italic;
+}
+.photo-card-meta{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  margin-top: 12px;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+.photo-rules{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.photo-rule{
+  background: var(--bone);
+  padding: 32px;
+}
+.photo-rule.no{background: rgba(156,52,21,.06);}
+.photo-rule h4{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.photo-rule.yes h4{color: var(--eucalyptus);}
+.photo-rule.no h4{color: var(--sienna);}
+.photo-rule ul{
+  list-style: none;
+}
+.photo-rule li{
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 6px 0;
+  color: var(--ink-soft);
+}
+
+/* ============= APPLICATIONS ============= */
+.apps{background: var(--ink); color: var(--bone);}
+.app-block{
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  gap: 56px;
+  padding: 56px 0;
+  border-bottom: 1px solid rgba(245,243,238,.15);
+  align-items: center;
+}
+.app-block:last-child{border-bottom: 0;}
+.app-block.reverse{grid-template-columns: 0.6fr 0.4fr;}
+.app-info h3{
+  font-family: var(--display);
+  font-size: 36px;
+  line-height: 1.05;
+  margin-bottom: 16px;
+  font-weight: 350;
+}
+.app-info h3 em{font-style: italic; color: var(--eucalyptus-soft);}
+.app-info p{
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(245,243,238,.85);
+  margin-bottom: 20px;
+}
+.app-info ul{
+  list-style: none;
+  border-top: 1px solid rgba(245,243,238,.15);
+  padding-top: 16px;
+}
+.app-info li{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  padding: 6px 0;
+  color: var(--eucalyptus-soft);
+}
+
+.mock{
+  background: var(--bone);
+  color: var(--ink);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.mock-tag{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.mock-ad{aspect-ratio: 4/5; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; background: var(--ink); color: var(--bone);}
+.mock-ad-eyebrow{font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--eucalyptus-soft);}
+.mock-ad-headline{font-family: var(--display); font-size: 36px; line-height: 1; font-weight: 300;}
+.mock-ad-headline em{font-style: italic;}
+.mock-ad-cta{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--bone);
+  padding: 12px 18px;
+  width: fit-content;
+}
+
+.mock-ig{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.mock-ig-tile{
+  aspect-ratio: 1;
+  background: var(--bone-2);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--display);
+  font-size: 14px;
+  line-height: 1.1;
+  font-weight: 350;
+}
+.mock-ig-tile.dark{background: var(--ink); color: var(--bone);}
+.mock-ig-tile.eucalyptus{background: var(--eucalyptus); color: var(--bone);}
+.mock-ig-tile em{font-style: italic;}
+.mock-ig-tile .mock-ig-num{
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+}
+
+.mock-vsl{
+  background: var(--ink);
+  color: var(--bone);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.mock-vsl-frame{
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--eucalyptus-deep), var(--eucalyptus));
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mock-vsl-frame::after{
+  content: '▶';
+  width: 56px; height: 56px;
+  background: rgba(245,243,238,.95);
+  color: var(--eucalyptus);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.mock-vsl-script{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.45;
+  color: rgba(245,243,238,.9);
+  border-left: 2px solid var(--eucalyptus-soft);
+  padding-left: 16px;
+}
+.mock-vsl-meta{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,243,238,.55);
+}
+
+/* ============= GUARDRAILS ============= */
+.guard-list{
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+.guard{
+  display: grid;
+  grid-template-columns: 80px 1fr 200px;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.guard-num{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 36px;
+  line-height: 1;
+  color: var(--eucalyptus);
+  font-weight: 300;
+}
+.guard-text{
+  font-family: var(--display);
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 400;
+}
+.guard-text strong{color: var(--eucalyptus);}
+.guard-status{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: right;
+  padding-top: 10px;
+}
+.guard-status.must{color: var(--eucalyptus);}
+.guard-status.never{color: var(--sienna);}
+
+/* ============= COMPLIANCE ============= */
+.compliance{
+  background: #2A1410;
+  color: var(--bone);
+  padding: 80px 0;
+}
+.comp-card{
+  border: 1px solid rgba(245,243,238,.25);
+  padding: 56px;
+  position: relative;
+}
+.comp-card::before{
+  content:'⚠ ATENÇÃO LEGAL';
+  position: absolute;
+  top: -12px;
+  left: 32px;
+  background: var(--bone);
+  color: #2A1410;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  padding: 6px 12px;
+  font-weight: 600;
+}
+.comp-card h3{
+  font-family: var(--display);
+  font-size: 32px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+.comp-card p{
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: rgba(245,243,238,.92);
+}
+.comp-card p strong{color: var(--bone);}
+.comp-list{
+  margin-top: 32px;
+  list-style: none;
+  border-top: 1px solid rgba(245,243,238,.2);
+}
+.comp-list li{
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(245,243,238,.15);
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(245,243,238,.92);
+  align-items: start;
+}
+.comp-list li::before{
+  content: counter(comp);
+  counter-increment: comp;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: rgba(245,243,238,.55);
+}
+.comp-list{counter-reset: comp;}
+
+/* ============= CLOSE ============= */
+.close{
+  background: var(--ink);
+  color: var(--bone);
+  padding: 200px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.close::before{
+  content:'';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(31,58,46,.4), transparent 60%);
+}
+.close-quote{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 300;
+  max-width: 1100px;
+  margin: 0 auto 48px;
+  position: relative;
+  z-index: 2;
+}
+.close-quote em{color: var(--eucalyptus-soft);}
+.close-sig{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(245,243,238,.55);
+  position: relative;
+  z-index: 2;
+}
+.close-sig strong{
+  display: block;
+  margin-top: 8px;
+  color: var(--bone);
+  font-weight: 500;
+}
+
+/* ============= FOOTER ============= */
+.foot{
+  background: var(--ink);
+  color: rgba(245,243,238,.55);
+  padding: 32px 56px;
+  border-top: 1px solid rgba(245,243,238,.15);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ============= RESPONSIVE ============= */
+@media (max-width: 1024px){
+  section{padding: 80px 0;}
+  .wrap{padding: 0 32px;}
+  .thesis-grid, .audience-grid, .vocab-system, .arch-explainer, .app-block, .app-block.reverse, .color-rules, .posit-grid{grid-template-columns: 1fr; gap: 48px;}
+  .archetype-mix, .enemy-grid, .vocab-stages, .principles-grid, .photo-grid, .photo-rules, .color-grid, .index-grid, .color-hero, .lex-grid{grid-template-columns: 1fr 1fr;}
+  .guard{grid-template-columns: 60px 1fr; }
+  .guard-status{grid-column: 2; text-align: left; padding-top: 4px;}
+}
+@media (max-width: 640px){
+  section{padding: 56px 0;}
+  .wrap{padding: 0 20px;}
+  .cover{padding: 32px 24px;}
+  .cover-meta{gap: 24px;}
+  .cover-bottom{flex-direction: column; gap: 24px; align-items: flex-start;}
+  .archetype-mix, .enemy-grid, .vocab-stages, .principles-grid, .photo-grid, .photo-rules, .color-grid, .index-grid, .color-hero, .lex-grid, .mock-ig{grid-template-columns: 1fr;}
+  .voice-pair, .type-row{grid-template-columns: 1fr; gap: 16px;}
+  .lex-list{columns: 1;}
+  .idx-row{padding: 20px 24px;}
+  .principle{padding: 40px 28px; min-height: 0;}
+  .vocab-tm{font-size: 44px;}
+  .type-display{font-size: 56px;}
+  .type-h2{font-size: 32px;}
+  .type-quote{font-size: 22px;}
+  .logo-mark{font-size: 56px;}
+  .swatch{aspect-ratio: 4/3;}
+  .foot{flex-direction: column; gap: 12px; padding: 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============= COVER ============= -->
+<section class="cover">
+  <div class="cover-top">
+    <span>Brand Bible · v1.0</span>
+    <span>Confidencial · Uso Interno</span>
+  </div>
+  <div class="cover-title">
+    <div class="cover-eyebrow">Sistema de Marca · Posicionamento Clínico</div>
+    <h1>Dr. Thyago<br>Henrique<br><em>Saturação Neural™</em></h1>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-meta">
+      <div>Cliente<br><strong>Dr. Thyago Henrique</strong></div>
+      <div>Produto<br><strong>Códigos da Mente · 365D</strong></div>
+      <div>Consultoria<br><strong>FGG Digital</strong></div>
+    </div>
+    <div>Maio · 2026</div>
+  </div>
+</section>
+
+<!-- ============= INDEX ============= -->
+<section class="index">
+  <div class="wrap" style="padding-bottom: 0;">
+    <div class="section-num" style="margin-bottom: 32px;">Índice</div>
+    <h2 class="title" style="margin-bottom: 56px;">Como ler este <em>documento.</em></h2>
+    <p class="lede" style="margin-bottom: 64px;">Este não é um guia visual. É um sistema de decisão. Cada linha aqui foi escrita para responder uma pergunta específica de produto, copy ou design — antes que a pergunta apareça.</p>
+  </div>
+  <div class="index-grid">
+    <div>
+      <div class="idx-row"><span class="idx-num">01</span><span class="idx-name">A Tese</span><span class="idx-tag">Estratégia</span></div>
+      <div class="idx-row"><span class="idx-num">02</span><span class="idx-name">O Inimigo</span><span class="idx-tag">Mecanismo</span></div>
+      <div class="idx-row"><span class="idx-num">03</span><span class="idx-name">O Público</span><span class="idx-tag">Avatar</span></div>
+      <div class="idx-row"><span class="idx-num">04</span><span class="idx-name">O Arquétipo</span><span class="idx-tag">Personalidade</span></div>
+      <div class="idx-row"><span class="idx-num">05</span><span class="idx-name">Posicionamento</span><span class="idx-tag">Categoria</span></div>
+      <div class="idx-row"><span class="idx-num">06</span><span class="idx-name">Vocabulário Proprietário</span><span class="idx-tag">Linguagem</span></div>
+      <div class="idx-row"><span class="idx-num">07</span><span class="idx-name">Voz & Tom</span><span class="idx-tag">Copy</span></div>
+      <div class="idx-row"><span class="idx-num">08</span><span class="idx-name">Princípios de Escrita</span><span class="idx-tag">Editorial</span></div>
+    </div>
+    <div>
+      <div class="idx-row"><span class="idx-num">09</span><span class="idx-name">Sistema de Logo</span><span class="idx-tag">Identidade</span></div>
+      <div class="idx-row"><span class="idx-num">10</span><span class="idx-name">Paleta de Cores</span><span class="idx-tag">Visual</span></div>
+      <div class="idx-row"><span class="idx-num">11</span><span class="idx-name">Tipografia</span><span class="idx-tag">Visual</span></div>
+      <div class="idx-row"><span class="idx-num">12</span><span class="idx-name">Direção Fotográfica</span><span class="idx-tag">Imagem</span></div>
+      <div class="idx-row"><span class="idx-num">13</span><span class="idx-name">Aplicações</span><span class="idx-tag">Implementação</span></div>
+      <div class="idx-row"><span class="idx-num">14</span><span class="idx-name">Guardrails de Conversão</span><span class="idx-tag">Performance</span></div>
+      <div class="idx-row"><span class="idx-num">15</span><span class="idx-name">Compliance Médica</span><span class="idx-tag">Legal</span></div>
+      <div class="idx-row"><span class="idx-num">16</span><span class="idx-name">Manifesto</span><span class="idx-tag">Encerramento</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 01 · THESIS ============= -->
+<section>
+  <div class="wrap">
+    <div class="section-num">01 · A Tese</div>
+    <div class="thesis-grid">
+      <div>
+        <p class="thesis-statement">A geração que <em>nunca aprendeu a desligar</em> não tem ansiedade. Tem um cérebro <em>cronicamente saturado.</em></p>
+      </div>
+      <div class="thesis-aside">
+        <p>Antes de qualquer decisão de copy, design ou produto, este é o terreno onde Dr. Thyago opera.</p>
+        <p>Ele <strong>não é mais um psiquiatra falando sobre ansiedade</strong>. Ele é o médico que diagnosticou um estado que o mercado ainda não nomeou: a saturação neural crônica de uma geração que dorme com o celular, acorda já no terceiro alerta, e considera "exaustão funcional" sinônimo de produtividade.</p>
+        <p>Toda a arquitetura desta marca existe para fazer <strong>uma única coisa</strong>: dar nome ao que o lead já sente, e mostrar que existe um caminho clínico — não místico, não motivacional, não terapêutico — para sair desse estado.</p>
+        <p>Esta é a categoria. Tudo o mais é tática.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 02 · ENEMY ============= -->
+<section class="enemy">
+  <div class="wrap">
+    <div class="section-num">02 · O Inimigo</div>
+    <h2 class="enemy-headline">Saturação Neural <em>não é diagnóstico médico.</em><br>É a moldura clínica do que o lead já sente.</h2>
+    <div class="enemy-grid">
+      <div class="enemy-card">
+        <div>
+          <span class="enemy-stage">Estágio 01</span>
+          <h3 class="enemy-name">Saturação<br><em>Latente</em></h3>
+        </div>
+        <div>
+          <p class="enemy-desc">O cansaço não passa com o final de semana. O sono parece bom, mas o corpo acorda alerta. Produtividade ainda funciona — pelo medo.</p>
+          <div class="enemy-score">Score 25 — 50</div>
+        </div>
+      </div>
+      <div class="enemy-card">
+        <div>
+          <span class="enemy-stage">Estágio 02</span>
+          <h3 class="enemy-name">Saturação<br><em>Ativa</em></h3>
+        </div>
+        <div>
+          <p class="enemy-desc">Acordar 3h da manhã virou rotina. Irritabilidade explode com quem você ama. Esquecimentos pontuais. Crises silenciosas no carro.</p>
+          <div class="enemy-score">Score 50 — 70</div>
+        </div>
+      </div>
+      <div class="enemy-card">
+        <div>
+          <span class="enemy-stage">Estágio 03</span>
+          <h3 class="enemy-name">Saturação<br><em>Crônica</em></h3>
+        </div>
+        <div>
+          <p class="enemy-desc">Sintomas físicos aparecem. Aperto no peito. Refluxo. Pressão alta sem causa. O corpo começa a entregar o que a mente vinha empurrando há meses.</p>
+          <div class="enemy-score">Score 70 — 88</div>
+        </div>
+      </div>
+      <div class="enemy-card">
+        <div>
+          <span class="enemy-stage">Estágio 04</span>
+          <h3 class="enemy-name">Colapso<br><em>Funcional</em></h3>
+        </div>
+        <div>
+          <p class="enemy-desc">Burnout clínico. Travas decisórias. Ataques de pânico. Afastamento involuntário. Esgotamento que não cede com férias, com remédio, com nada.</p>
+          <div class="enemy-score">Score 88 — 100</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 03 · AUDIENCE ============= -->
+<section>
+  <div class="wrap">
+    <div class="section-num">03 · O Público</div>
+    <h2 class="title">Para quem isso <em>foi feito.</em></h2>
+    <div class="audience-grid">
+      <div class="persona-card">
+        <span class="persona-tag">Avatar Primário</span>
+        <h3 class="persona-name">Marina, 38</h3>
+        <div class="persona-meta">Advogada · São Paulo · Casada · 1 filho</div>
+        <p class="persona-quote">"Eu já sei que não é só estresse. Mas não sei o que é, e nenhum médico me deu uma resposta que faz sentido."</p>
+        <dl>
+          <div class="persona-row"><dt>Renda</dt><dd>R$ 18K — R$ 45K/mês família</dd></div>
+          <div class="persona-row"><dt>Sono</dt><dd>Acorda 3-4h. Volta a dormir difícil.</dd></div>
+          <div class="persona-row"><dt>Já tentou</dt><dd>Terapia, meditação, melatonina, mindfulness, retiro de yoga</dd></div>
+          <div class="persona-row"><dt>Dor real</dt><dd>Não reconhece a versão dela mesma. Está perdendo paciência com o filho.</dd></div>
+          <div class="persona-row"><dt>Linguagem</dt><dd>Lê NYT, ouve podcast, segue Andrew Huberman</dd></div>
+          <div class="persona-row"><dt>Resistência</dt><dd>Já gastou caro com soluções fracas. Cético com produto digital.</dd></div>
+        </dl>
+      </div>
+      <div class="audience-text">
+        <h3>O que ela quer ouvir</h3>
+        <p>Marina não quer "abraços virtuais". Quer alguém que <strong>nomeie o que ela está sentindo com precisão clínica</strong>, e que apresente um caminho com etapas, métricas e prazo. Ela compra rigor disfarçado de calma.</p>
+        <p>Ela rejeita instantaneamente qualquer coisa que cheire a coach motivacional, manifestação, energia, transformação. Mas compra Huberman, Peter Attia, Lyle McDonald, Jordan Peterson clínico.</p>
+
+        <h3>O que ela rejeita</h3>
+        <p>Promessas vagas. Linguagem mística. Excesso de emoji. Tom paternalista. Histórias de transformação genéricas. CTAs em caps lock. Vendedor que finge ser amigo.</p>
+
+        <h3>O que a faz comprar</h3>
+        <p>Mecanismo nomeado. Dados. Estudos citados. Médico com credenciais visíveis. Estrutura de fases. Score mensurável. Casos clínicos detalhados. Garantia que não pareça desespero. Preço alto o suficiente para não parecer suspeito.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 04 · ARCHETYPE ============= -->
+<section class="archetype">
+  <div class="wrap">
+    <div class="section-num">04 · O Arquétipo</div>
+    <h2 class="title">Sábio que <em>comanda.</em><br>Não cuidador que <em>conforta.</em></h2>
+    <div class="archetype-mix">
+      <div class="arch-card primary">
+        <div class="arch-percent">60<em>%</em></div>
+        <div class="arch-name">Primário · The Sage</div>
+        <p class="arch-tagline">"O conhecimento não está no que você sente. Está no que está acontecendo no seu corpo enquanto você sente."</p>
+        <p class="arch-detail">O Sábio observa, nomeia, explica. Tem dados. Cita pesquisa. Não dramatiza. Trata o lead como adulto inteligente que merece a verdade técnica.</p>
+      </div>
+      <div class="arch-card">
+        <div class="arch-percent">30<em>%</em></div>
+        <div class="arch-name">Secundário · The Ruler</div>
+        <p class="arch-tagline">"O caminho é este. As fases são estas. Você não precisa decidir mais. Só precisa seguir."</p>
+        <p class="arch-detail">O Soberano comanda com clareza. Estrutura, ordem, protocolo. Não pede permissão, oferece direção. Cria o sistema dentro do qual a recuperação acontece.</p>
+      </div>
+      <div class="arch-card">
+        <div class="arch-percent">10<em>%</em></div>
+        <div class="arch-name">Suporte · The Caregiver</div>
+        <p class="arch-tagline">"Não é fraqueza. É biologia. E biologia tem solução."</p>
+        <p class="arch-detail">O Cuidador aparece em momentos calibrados — nunca como tom dominante. Empatia clínica, não emocional. Reconhece a dor, mas não a explora.</p>
+      </div>
+    </div>
+    <div class="arch-explainer">
+      <div>
+        <h4>O que isso significa na prática</h4>
+        <p>Dr. Thyago fala como Andrew Huberman, não como Pedro Calabrez. Estrutura como Peter Attia, não como Tony Robbins. Empatia como Bessel van der Kolk, não como Augusto Cury.</p>
+      </div>
+      <div>
+        <h4>O risco do desvio</h4>
+        <p>Se a comunicação escorregar para Healer puro (acolhimento maternal), a conversão cai 40-60%. Saúde mental premium é vendida com firmeza, não com fofura. O lead exausto rejeita quem fala com ele como criança.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 05 · POSITIONING ============= -->
+<section class="posit">
+  <div class="wrap">
+    <div class="section-num">05 · Posicionamento</div>
+    <h2 class="title">A frase que <em>resolve tudo.</em></h2>
+    <div class="posit-statement">
+      <strong>Para</strong> profissionais entre 30 e 50 anos cronicamente exaustos, que já tentaram terapia, meditação e remédio sem resultado real, <strong>Dr. Thyago Henrique é</strong> o médico que nomeou o estado de <em>Saturação Neural Crônica</em> — e construiu o único protocolo clínico de 12 meses para descarregá-lo de forma progressiva, mensurável e com supervisão médica direta.
+    </div>
+    <div class="posit-grid">
+      <div class="posit-card">
+        <h4>Categoria</h4>
+        <p>Medicina da Saturação Neural — não psiquiatria genérica, não coaching, não bem-estar.</p>
+      </div>
+      <div class="posit-card">
+        <h4>Diferenciação</h4>
+        <p>Mecanismo proprietário com fases nomeadas, score mensurável e supervisão de 365 dias.</p>
+      </div>
+      <div class="posit-card">
+        <h4>Promessa</h4>
+        <p>Sair do estado de alerta crônico em 12 meses, com dados, sem improviso, sem motivação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 06 · VOCABULARY ============= -->
+<section class="vocab">
+  <div class="wrap">
+    <div class="section-num">06 · Vocabulário Proprietário</div>
+    <h2 class="title">A linguagem que <em>nenhum concorrente pode usar.</em></h2>
+    <div class="vocab-system">
+      <div class="vocab-frame">
+        <div class="vocab-tm">Saturação<br>Neural<sup>™</sup></div>
+        <p class="vocab-def">Estado de hiperatividade crônica do eixo HPA caracterizado por ativação simpática persistente, ritmo circadiano fragmentado e exaustão funcional progressiva.</p>
+        <div class="vocab-stages">
+          <div class="vocab-stage"><div class="vocab-stage-num">01</div><div class="vocab-stage-name">Latente</div></div>
+          <div class="vocab-stage"><div class="vocab-stage-num">02</div><div class="vocab-stage-name">Ativa</div></div>
+          <div class="vocab-stage"><div class="vocab-stage-num">03</div><div class="vocab-stage-name">Crônica</div></div>
+          <div class="vocab-stage"><div class="vocab-stage-num">04</div><div class="vocab-stage-name">Colapso</div></div>
+        </div>
+      </div>
+      <div class="vocab-aside">
+        <h3>Por que isso é o ativo mais valioso da marca.</h3>
+        <p>Mecanismo proprietário transforma <strong>commodity em categoria</strong>. Sem ele, Dr. Thyago é mais um psiquiatra vendendo curso. Com ele, Dr. Thyago é o único que <em>nomeia</em> o que o lead sente.</p>
+        <p>Toda copy, todo anúncio, toda live, todo post, todo email — em algum momento — referencia Saturação Neural. Repetição constrói categoria. Categoria constrói preço.</p>
+        <p style="margin-top: 32px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; color: var(--eucalyptus-soft);">REGRA · NUNCA usar em isolado. Sempre acompanhado de "estado de", "quadro de", "padrão de" — nunca como diagnóstico.</p>
+      </div>
+    </div>
+    <div class="lex-grid">
+      <div class="lex-col yes">
+        <div class="lex-head yes">Vocabulário do Sim</div>
+        <ul class="lex-list">
+          <li>Protocolo</li>
+          <li>Mecanismo</li>
+          <li>Eixo HPA</li>
+          <li>Cortisol basal</li>
+          <li>Ritmo circadiano</li>
+          <li>Estado de alerta</li>
+          <li>Hiperestimulação</li>
+          <li>Saturação</li>
+          <li>Descarga progressiva</li>
+          <li>Estabilização</li>
+          <li>Reconstrução</li>
+          <li>Consolidação</li>
+          <li>Dados clínicos</li>
+          <li>Atendimentos</li>
+          <li>Padrão neuroendócrino</li>
+          <li>Caminho</li>
+          <li>Fases</li>
+          <li>Sintomas invisíveis</li>
+          <li>Carga acumulada</li>
+          <li>Desligar</li>
+        </ul>
+      </div>
+      <div class="lex-col no">
+        <div class="lex-head no">Vocabulário do Não</div>
+        <ul class="lex-list">
+          <li>Jornada</li>
+          <li>Transformação</li>
+          <li>Energia</li>
+          <li>Vibração</li>
+          <li>Manifestação</li>
+          <li>Mindset</li>
+          <li>Propósito</li>
+          <li>Empoderamento</li>
+          <li>Cura interior</li>
+          <li>Universo</li>
+          <li>Despertar</li>
+          <li>Segredo</li>
+          <li>Milagre</li>
+          <li>Você consegue!</li>
+          <li>Confia no processo</li>
+          <li>Fluir</li>
+          <li>Desbloquear</li>
+          <li>Versão 2.0</li>
+          <li>Mudar de vida</li>
+          <li>Renascer</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 07 · VOICE ============= -->
+<section>
+  <div class="wrap">
+    <div class="section-num">07 · Voz & Tom</div>
+    <h2 class="title">Como ele <em>fala.</em><br>E como ele <em>nunca</em> falaria.</h2>
+    <p class="lede" style="margin-bottom: 80px;">A voz de Dr. Thyago é calma, específica e direta. Nunca apressada, nunca dramática, nunca infantilizada. Cada exemplo abaixo mostra como o mesmo conteúdo muda completamente a percepção dependendo do tom.</p>
+
+    <div class="voice-pairs">
+      <div class="voice-pair">
+        <div class="voice-context"><strong>No Hero da página</strong>Headline principal</div>
+        <div class="voice-yes">
+          <span class="voice-label">Faz</span>
+          <p class="voice-text">"O caminho de 12 meses para descarregar o cortisol e dormir como antes."</p>
+        </div>
+        <div class="voice-no">
+          <span class="voice-label">Não faz</span>
+          <p class="voice-text">"Pare de sobreviver. Comece a viver com equilíbrio."</p>
+        </div>
+      </div>
+
+      <div class="voice-pair">
+        <div class="voice-context"><strong>Apresentação</strong>Quem é o médico</div>
+        <div class="voice-yes">
+          <span class="voice-label">Faz</span>
+          <p class="voice-text">"Há 14 anos atendo pacientes que já tentaram tudo. O padrão se repete."</p>
+        </div>
+        <div class="voice-no">
+          <span class="voice-label">Não faz</span>
+          <p class="voice-text">"Sou apaixonado por ajudar pessoas a reencontrarem o equilíbrio interior!"</p>
+        </div>
+      </div>
+
+      <div class="voice-pair">
+        <div class="voice-context"><strong>Abertura de VSL</strong>Primeiros 8 segundos</div>
+        <div class="voice-yes">
+          <span class="voice-label">Faz</span>
+          <p class="voice-text">"Se você acorda às 3h da manhã com o coração acelerado, presta atenção nos próximos 90 segundos."</p>
+        </div>
+        <div class="voice-no">
+          <span class="voice-label">Não faz</span>
+          <p class="voice-text">"Olá! Hoje eu quero conversar com você sobre algo muito importante para sua vida."</p>
+        </div>
+      </div>
+
+      <div class="voice-pair">
+        <div class="voice-context"><strong>CTA principal</strong>Botão de compra</div>
+        <div class="voice-yes">
+          <span class="voice-label">Faz</span>
+          <p class="voice-text">"Começar protocolo →"</p>
+        </div>
+        <div class="voice-no">
+          <span class="voice-label">Não faz</span>
+          <p class="voice-text">"Quero transformar minha vida agora!"</p>
+        </div>
+      </div>
+
+      <div class="voice-pair">
+        <div class="voice-context"><strong>Resposta a objeção</strong>"Já tentei tudo"</div>
+        <div class="voice-yes">
+          <span class="voice-label">Faz</span>
+          <p class="voice-text">"O que você tentou trata sintoma. Saturação Neural é mecanismo. São camadas diferentes."</p>
+        </div>
+        <div class="voice-no">
+          <span class="voice-label">Não faz</span>
+          <p class="voice-text">"Eu sei como você se sente. Comigo é diferente, te garanto!"</p>
+        </div>
+      </div>
+
+      <div class="voice-pair">
+        <div class="voice-context"><strong>Stories Instagram</strong>Conteúdo orgânico</div>
+        <div class="voice-yes">
+          <span class="voice-label">Faz</span>
+          <p class="voice-text">"3 sintomas que indicam que seu eixo HPA está em alerta crônico. Salva isso."</p>
+        </div>
+        <div class="voice-no">
+          <span class="voice-label">Não faz</span>
+          <p class="voice-text">"Bom dia, lindezas! Hoje vamos falar de autocuidado 💚✨🌿"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 08 · PRINCIPLES ============= -->
+<section class="principles">
+  <div class="wrap">
+    <div class="section-num">08 · Princípios de Escrita</div>
+    <h2 class="title">Oito regras que <em>não se discutem.</em></h2>
+  </div>
+  <div class="wrap" style="padding: 0 56px;">
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="principle-num">01</div>
+        <h3 class="principle-title">Específico vence genérico.<br>Sempre.</h3>
+        <p class="principle-desc">"Acorda às 3h da manhã" vence "tem dificuldade para dormir". Sintomas com horário, gatilho ou sensação física específica criam identificação imediata.</p>
+        <div class="principle-rule">Regra · Cada parágrafo precisa de pelo menos um detalhe sensorial concreto.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">02</div>
+        <h3 class="principle-title">Frase curta carrega <em>autoridade.</em></h3>
+        <p class="principle-desc">Frases longas soam como explicação defensiva. Médico que sabe, fala em períodos curtos. "Não é fraqueza. É biologia." carrega mais peso que três linhas justificando.</p>
+        <div class="principle-rule">Regra · Média de 8-14 palavras por frase. Quebrar quando passar de 20.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">03</div>
+        <h3 class="principle-title">Comando substitui <em>convite.</em></h3>
+        <p class="principle-desc">CTAs em modo imperativo: "Começar protocolo", "Acessar diagnóstico", "Iniciar". Nunca em forma de pergunta ou desejo: "Quer começar?", "Eu quero!".</p>
+        <div class="principle-rule">Regra · Verbo no infinitivo ou imperativo. Nunca primeira pessoa.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">04</div>
+        <h3 class="principle-title">Número vence <em>adjetivo.</em></h3>
+        <p class="principle-desc">"3.412 atendimentos" vence "muita experiência". "12 protocolos" vence "método completo". Números viram âncoras de credibilidade que adjetivos não conseguem ser.</p>
+        <div class="principle-rule">Regra · Toda promessa precisa de um número. Toda credencial idem.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">05</div>
+        <h3 class="principle-title">Inimigo nomeado <em>vende.</em></h3>
+        <p class="principle-desc">Cortisol crônico. Eixo HPA hiperativo. Saturação Neural. Inimigos abstratos não criam urgência. O cérebro só age contra o que ele consegue visualizar.</p>
+        <div class="principle-rule">Regra · Toda peça de copy precisa nomear o inimigo nas primeiras 3 frases.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">06</div>
+        <h3 class="principle-title">Itálico <em>marca</em> ênfase.<br>Caps mata.</h3>
+        <p class="principle-desc">A ênfase é construída tipograficamente — itálico do display serif. Nunca CAPS LOCK, nunca múltiplos pontos de exclamação, nunca negrito agressivo no meio do texto.</p>
+        <div class="principle-rule">Regra · Itálico só na palavra-chave. Nunca em frase inteira.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">07</div>
+        <h3 class="principle-title">Empatia <em>clínica,</em><br>não maternal.</h3>
+        <p class="principle-desc">"Faz sentido você estar exausto. Tem causa biológica" vence "Você não está sozinho, eu te entendo, querida". O lead premium quer ser tratado como adulto que precisa de informação, não como criança que precisa de colo.</p>
+        <div class="principle-rule">Regra · Reconhecer a dor com precisão. Nunca explorá-la com adjetivos.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">08</div>
+        <h3 class="principle-title">Estrutura é <em>argumento.</em></h3>
+        <p class="principle-desc">Listar fases, etapas, semanas, meses, scores. Estrutura visível comunica "isto é um sistema, não um conteúdo". Cérebro do lead premium compra arquitetura, não inspiração.</p>
+        <div class="principle-rule">Regra · Toda promessa de transformação acompanhada de estrutura visível.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 09 · LOGO ============= -->
+<section>
+  <div class="wrap">
+    <div class="section-num">09 · Sistema de Logo</div>
+    <h2 class="title">A assinatura <em>do médico.</em></h2>
+    <p class="lede" style="margin-bottom: 64px;">A marca pessoal do Dr. Thyago é construída em duas camadas: o nome próprio como autoridade e o método como categoria. Os dois se sustentam mutuamente — e nunca aparecem desacompanhados em peças oficiais.</p>
+
+    <div class="logo-stage" data-label="Versão Primária · Light">
+      <div class="logo-mark">
+        Thyago<br><em>Henrique</em>
+        <span class="doctor">Médico · CRM-XX 000.000</span>
+      </div>
+    </div>
+
+    <div class="logo-stage dark" data-label="Versão Inversa · Dark">
+      <div class="logo-mark">
+        Thyago<br><em>Henrique</em>
+        <span class="doctor">Médico · CRM-XX 000.000</span>
+      </div>
+    </div>
+
+    <div class="logo-grid">
+      <div class="logo-rule">
+        <h4>Construção</h4>
+        <p>Nome em Fraunces 300 + sobrenome em itálico, com cor accent (eucalipto). Linha de status médico em Geist Mono uppercase, espaçamento amplo, peso 500. Hierarquia inegociável: nome domina, status sussurra autoridade.</p>
+      </div>
+      <div class="logo-rule">
+        <h4>Espaçamento</h4>
+        <p>Área de proteção mínima equivalente à altura-x do "h" do sobrenome em todos os lados. Em peças sociais, manter 12% da menor dimensão do canvas livre ao redor da marca.</p>
+      </div>
+      <div class="logo-rule">
+        <h4>Cores permitidas</h4>
+        <p>Eucalipto sobre off-white, off-white sobre grafite, grafite sobre off-white. Nunca aplicar a marca sobre fundos coloridos vibrantes, fotos com baixo contraste ou sobre o sienna (reservado a alertas).</p>
+      </div>
+      <div class="logo-rule">
+        <h4>Proibido</h4>
+        <p>Esticar, rotacionar, adicionar sombra, gradiente ou outline. Nunca usar a versão sem o status "Médico · CRM" em peças comerciais — a credencial é elemento de marca, não decoração opcional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 10 · COLOR ============= -->
+<section class="color">
+  <div class="wrap">
+    <div class="section-num">10 · Paleta de Cores</div>
+    <h2 class="title">Verde profundo, <em>não pastel.</em></h2>
+    <p class="lede" style="margin-bottom: 64px; color: rgba(245,243,238,.92);">A maioria das marcas de saúde mental cai em pastéis azuis ou lilases — território saturado e barato. Dr. Thyago opera em verde eucalipto profundo: clínico, autoritativo, distintivo. Calmo sem ser fofo.</p>
+
+    <div class="color-hero">
+      <div class="swatch eucalyptus">
+        <div>
+          <div class="swatch-role">Cor primária · Signature</div>
+          <div class="swatch-name">Eucalyptus<br><em>Deep</em></div>
+        </div>
+        <div class="swatch-meta">
+          <div>HEX · #1F3A2E</div>
+          <div>RGB · 31 · 58 · 46</div>
+          <div>USO · 60% das peças oficiais</div>
+        </div>
+      </div>
+      <div class="swatch ink-block">
+        <div>
+          <div class="swatch-role">Neutro Escuro · Base</div>
+          <div class="swatch-name">Graphite<br><em>Ink</em></div>
+        </div>
+        <div class="swatch-meta">
+          <div>HEX · #0A0A0A</div>
+          <div>RGB · 10 · 10 · 10</div>
+          <div>USO · 25% · seções de autoridade</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-grid">
+      <div class="swatch-sm bone">
+        <div class="swatch-sm-name">Bone</div>
+        <div class="swatch-sm-meta">#F5F3EE<br>Fundo principal</div>
+      </div>
+      <div class="swatch-sm bone-2">
+        <div class="swatch-sm-name">Bone 2</div>
+        <div class="swatch-sm-meta">#EAE6DC<br>Surface secundária</div>
+      </div>
+      <div class="swatch-sm stone">
+        <div class="swatch-sm-name">Stone</div>
+        <div class="swatch-sm-meta">#4A4639<br>Texto secundário</div>
+      </div>
+      <div class="swatch-sm euc-soft">
+        <div class="swatch-sm-name">Eucalyptus Soft</div>
+        <div class="swatch-sm-meta">#7FA890<br>Accent em fundo escuro</div>
+      </div>
+      <div class="swatch-sm sienna">
+        <div class="swatch-sm-name">Sienna</div>
+        <div class="swatch-sm-meta">#9C3415<br>Urgência · Alerta · Garantia</div>
+      </div>
+      <div class="swatch-sm gold">
+        <div class="swatch-sm-name">Gold</div>
+        <div class="swatch-sm-meta">#8A6F3F<br>Premium · Bônus · VIP</div>
+      </div>
+    </div>
+
+    <div class="color-rules">
+      <div class="color-rule">
+        <h4>Regra dos 60-25-10-5</h4>
+        <p><strong>60%</strong> off-white bone como respiração. <strong>25%</strong> grafite ink em seções de peso. <strong>10%</strong> eucalipto como acentuação clínica. <strong>5%</strong> sienna ou gold em momentos de exceção.</p>
+      </div>
+      <div class="color-rule">
+        <h4>Verde só em contexto</h4>
+        <p>Eucalyptus aparece em <strong>palavras-âncora</strong>, CTAs primários, callouts de mecanismo e selos de autoridade. Nunca em fundos amplos competindo com o conteúdo.</p>
+      </div>
+      <div class="color-rule">
+        <h4>Sienna é urgência</h4>
+        <p>O sienna é <strong>tóxico em doses altas</strong>. Reservado a: tags de oferta limitada, alerta de garantia, status de risco em score de saturação. Nunca como cor de marca.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 11 · TYPOGRAPHY ============= -->
+<section>
+  <div class="wrap">
+    <div class="section-num">11 · Tipografia</div>
+    <h2 class="title">Editorial <em>clínico.</em></h2>
+    <p class="lede" style="margin-bottom: 64px;">A combinação Fraunces × Geist × Instrument Serif posiciona Dr. Thyago no território editorial — entre New Yorker e Apple Health. Serif acadêmico para autoridade, sans neutro para clareza, italic ornamental para humanidade.</p>
+
+    <div class="type-stack">
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Fraunces</strong>
+          <span>Display Serif</span>
+          <span>Pesos · 300, 350, 400</span>
+          <span>Peso primário · 300</span>
+        </div>
+        <div class="type-sample">
+          <p class="type-display">Saturação <em>Neural.</em></p>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Fraunces · H2</strong>
+          <span>Section title</span>
+          <span>48-88px · line-height 1.05</span>
+        </div>
+        <div class="type-sample">
+          <p class="type-h2">O caminho de 12 meses para <em>descarregar o cortisol.</em></p>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Geist Mono</strong>
+          <span>Eyebrow · Tags · Meta</span>
+          <span>10-14px · letter-spacing 0.2em</span>
+          <span>Sempre uppercase</span>
+        </div>
+        <div class="type-sample">
+          <p class="type-eyebrow">Protocolo Médico · 365 dias</p>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Geist</strong>
+          <span>Body Sans</span>
+          <span>Pesos · 400, 500, 600</span>
+          <span>Texto corrido em 16px</span>
+        </div>
+        <div class="type-sample">
+          <p class="type-body">Há quatorze anos atendo pacientes que chegam ao consultório depois de já terem tentado terapia, meditação, ansiolítico, mindfulness, retiros e <strong>nada funcionou de verdade</strong>. O padrão sempre se repete: o eixo HPA está em alerta crônico há tempo demais.</p>
+        </div>
+      </div>
+
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Instrument Serif</strong>
+          <span>Italic ornamental</span>
+          <span>Apenas em quotes e citações</span>
+          <span>Acento humano · uso raro</span>
+        </div>
+        <div class="type-sample">
+          <p class="type-quote">"O que mais vejo no consultório não é falta de força de vontade. É gente que tentou. Muito."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 12 · PHOTO ============= -->
+<section class="photo">
+  <div class="wrap">
+    <div class="section-num">12 · Direção Fotográfica</div>
+    <h2 class="title">Realidade clínica, <em>não estoque.</em></h2>
+    <p class="lede" style="margin-bottom: 64px;">Toda imagem da marca passa por dois filtros antes de aprovação: parece um banco de imagens? parece um anúncio de remédio? Se sim, descarta. A direção visual é editorial documental — Apple Health × New Yorker × Aman Resort.</p>
+
+    <div class="photo-grid">
+      <div class="photo-card dim-1" data-scene="Cena 01">
+        <div>
+          <p class="photo-card-cap">Médico em consultório, jaleco branco, foco em mãos sobre prontuário.</p>
+          <p class="photo-card-meta">Luz natural lateral · 35mm</p>
+        </div>
+      </div>
+      <div class="photo-card dim-2" data-scene="Cena 02">
+        <div>
+          <p class="photo-card-cap">Paciente em meia-luz, perfil parcial, atmosfera de quarto à noite, expressão contida.</p>
+          <p class="photo-card-meta">Sombras naturais · 50mm · grain sutil</p>
+        </div>
+      </div>
+      <div class="photo-card dim-3" data-scene="Cena 03">
+        <div>
+          <p class="photo-card-cap">Detalhe de mesa de trabalho — caderno aberto, caneta, café frio. Sem rosto.</p>
+          <p class="photo-card-meta">Top-down · paleta neutra · 35mm</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="photo-rules">
+      <div class="photo-rule yes">
+        <h4>+ Sim usamos</h4>
+        <ul>
+          <li>Fotos do médico em ambiente clínico real, não estúdio</li>
+          <li>Pacientes em luz natural, expressões sutis, nunca poses</li>
+          <li>Detalhes ambientais (caderno, mesa, livro) que sugerem rotina</li>
+          <li>Grain sutil para textura editorial</li>
+          <li>Paleta filmada — verde-acinzentado, off-white, grafite</li>
+          <li>Composição assimétrica, espaço negativo generoso</li>
+        </ul>
+      </div>
+      <div class="photo-rule no">
+        <h4>× Nunca usamos</h4>
+        <ul>
+          <li>Stock photo de pessoa "sorrindo livremente em campo aberto"</li>
+          <li>Cabeça nas mãos, expressão dramática de ansiedade</li>
+          <li>Ícones genéricos de cérebro com circuitos brilhantes</li>
+          <li>Família feliz tomando café da manhã com vista pro mar</li>
+          <li>Médico com estetoscópio apontando pra câmera</li>
+          <li>Saturação alta, contraste forte, cores vibrantes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 13 · APPLICATIONS ============= -->
+<section class="apps">
+  <div class="wrap">
+    <div class="section-num">13 · Aplicações</div>
+    <h2 class="title">Como tudo isso <em>aparece no real.</em></h2>
+    <p class="lede" style="margin-bottom: 32px; color: rgba(245,243,238,.92);">Quatro contextos. Quatro implementações. Cada peça abaixo respeita as regras dos capítulos anteriores — se uma peça quebrar uma regra, a peça volta pra revisão antes de qualquer publicação.</p>
+
+    <div class="app-block">
+      <div class="app-info">
+        <h3>Anúncio · <em>Meta Ads</em></h3>
+        <p>Hook em 8 segundos. Mecanismo nomeado nos primeiros 3 segundos. CTA imperativo. Sem música emocional, sem voiceover dramático.</p>
+        <ul>
+          <li>· Formato 4:5 priorizado</li>
+          <li>· Headline em Fraunces 300</li>
+          <li>· Eyebrow eucalyptus soft</li>
+          <li>· CTA borda branca, sem fill</li>
+        </ul>
+      </div>
+      <div class="mock-ad">
+        <span class="mock-ad-eyebrow">Saturação Neural · Estágio 02</span>
+        <h4 class="mock-ad-headline">Acordar 3h da<br>manhã não é<br><em>insônia.</em><br>É outra coisa.</h4>
+        <span class="mock-ad-cta">Acessar diagnóstico →</span>
+      </div>
+    </div>
+
+    <div class="app-block reverse">
+      <div class="mock">
+        <span class="mock-tag">Grid · Feed</span>
+        <div class="mock-ig">
+          <div class="mock-ig-tile dark">
+            <span class="mock-ig-num">01 / 09</span>
+            <span>Cortisol não <em>acumula</em>. Mas o eixo HPA hiperativo, sim.</span>
+          </div>
+          <div class="mock-ig-tile eucalyptus">
+            <span class="mock-ig-num">02 / 09</span>
+            <span><em>3 sintomas</em> de Saturação Neural Crônica.</span>
+          </div>
+          <div class="mock-ig-tile">
+            <span class="mock-ig-num">03 / 09</span>
+            <span>O que <em>nenhum médico</em> te disse sobre acordar às 3h.</span>
+          </div>
+          <div class="mock-ig-tile eucalyptus">
+            <span class="mock-ig-num">04 / 09</span>
+            <span>Por que <em>terapia sozinha</em> não baixou seu cortisol.</span>
+          </div>
+          <div class="mock-ig-tile dark">
+            <span class="mock-ig-num">05 / 09</span>
+            <span>Faça o teste:<br><em>qual seu estágio?</em></span>
+          </div>
+          <div class="mock-ig-tile">
+            <span class="mock-ig-num">06 / 09</span>
+            <span>O <em>protocolo</em> dos 12 meses.</span>
+          </div>
+        </div>
+      </div>
+      <div class="app-info">
+        <h3>Instagram · <em>Conteúdo Orgânico</em></h3>
+        <p>Carrosséis educativos com peso editorial. Cada slide é uma frase autoral. Estética alterna entre fundo bone, eucalipto e grafite. Sempre um sintoma, mecanismo ou caso clínico — nunca motivacional.</p>
+        <ul>
+          <li>· Frequência · 3-4 carrosséis/semana</li>
+          <li>· Formato dominante · 1080x1350</li>
+          <li>· Sem emoji em legendas</li>
+          <li>· Hashtag mínima · 5 max</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="app-block">
+      <div class="app-info">
+        <h3>VSL · <em>Video Sales Letter</em></h3>
+        <p>Abertura com pattern interrupt visceral. Apresentação do médico em silêncio nos primeiros 30s. Mecanismo nomeado em 90s. Caso clínico em 3min. CTA em 8-12min. Sem trilha emocional.</p>
+        <ul>
+          <li>· Duração · 8-14 minutos</li>
+          <li>· B-roll em paleta filmada</li>
+          <li>· Voz limpa · sem música</li>
+          <li>· Texto em tela · Fraunces</li>
+        </ul>
+      </div>
+      <div class="mock-vsl">
+        <div class="mock-vsl-frame"></div>
+        <p class="mock-vsl-script">"Se você acorda às 3h da manhã com o coração acelerado, presta atenção nos próximos 90 segundos. Provavelmente ninguém te explicou ainda o que está realmente acontecendo no seu corpo."</p>
+        <div class="mock-vsl-meta">Roteiro · Abertura · 0:00 — 0:08</div>
+      </div>
+    </div>
+
+    <div class="app-block reverse">
+      <div class="mock">
+        <span class="mock-tag">Página · Hero</span>
+        <div style="background: var(--bone); padding: 32px; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--eucalyptus);">— Protocolo Médico · 365 dias</span>
+          <h4 style="font-family: var(--display); font-size: 38px; line-height: 1; letter-spacing: -0.02em; color: var(--ink); font-weight: 350;">O caminho de 12 meses para <em style="color: var(--eucalyptus); font-style: italic;">descarregar o cortisol</em> e dormir como antes.</h4>
+          <div style="display: flex; gap: 16px;">
+            <span style="background: var(--eucalyptus); color: var(--bone); padding: 12px 20px; border-radius: 100px; font-size: 12px; font-weight: 500;">Começar protocolo →</span>
+            <span style="color: var(--ink); font-size: 12px; padding: 12px 0; border-bottom: 1px solid var(--ink);">Conheça o médico</span>
+          </div>
+        </div>
+      </div>
+      <div class="app-info">
+        <h3>Landing Page · <em>Hero</em></h3>
+        <p>Eyebrow define categoria. H1 carrega mecanismo + tempo + promessa concreta. CTA primário em formato cápsula eucalyptus, secundário em ghost com underline. Sem promessas vagas, sem badges desnecessários.</p>
+        <ul>
+          <li>· Hero em 100vh ideal</li>
+          <li>· Vídeo do médico no lateral direito</li>
+          <li>· Authority bar logo após</li>
+          <li>· CTA acima da dobra · obrigatório</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 14 · GUARDRAILS ============= -->
+<section>
+  <div class="wrap">
+    <div class="section-num">14 · Guardrails de Conversão</div>
+    <h2 class="title">Doze decisões <em>já tomadas.</em></h2>
+    <p class="lede" style="margin-bottom: 64px;">Cada item abaixo é uma briga estratégica que já foi vencida. Você não precisa decidir de novo a cada peça. Se algo na implementação contradiz um guardrail, a peça volta — não o guardrail.</p>
+
+    <div class="guard-list">
+      <div class="guard"><div class="guard-num">01</div><p class="guard-text">Toda peça nomeia <strong>Saturação Neural</strong> nas primeiras três frases.</p><div class="guard-status must">Sempre</div></div>
+      <div class="guard"><div class="guard-num">02</div><p class="guard-text">Headline carrega <strong>mecanismo + tempo + inimigo</strong>. Faltou um, refaz.</p><div class="guard-status must">Sempre</div></div>
+      <div class="guard"><div class="guard-num">03</div><p class="guard-text">CTA primário usa <strong>verbo no infinitivo</strong>. Nunca primeira pessoa.</p><div class="guard-status must">Sempre</div></div>
+      <div class="guard"><div class="guard-num">04</div><p class="guard-text">Toda credencial vem com <strong>número</strong> ou data. Sem número, sem credencial.</p><div class="guard-status must">Sempre</div></div>
+      <div class="guard"><div class="guard-num">05</div><p class="guard-text">Toda página tem <strong>CRM visível</strong>. No header, no footer, no rodapé do anúncio.</p><div class="guard-status must">Sempre</div></div>
+      <div class="guard"><div class="guard-num">06</div><p class="guard-text">Estatística sem fonte <strong>não entra na peça</strong>. Sem exceção.</p><div class="guard-status must">Sempre</div></div>
+      <div class="guard"><div class="guard-num">07</div><p class="guard-text">Caps lock, ponto de exclamação duplo, emoji em copy oficial.</p><div class="guard-status never">Nunca</div></div>
+      <div class="guard"><div class="guard-num">08</div><p class="guard-text">Trilha sonora emocional em VSL ou anúncio.</p><div class="guard-status never">Nunca</div></div>
+      <div class="guard"><div class="guard-num">09</div><p class="guard-text">Promessa de cura, milagre, transformação garantida.</p><div class="guard-status never">Nunca</div></div>
+      <div class="guard"><div class="guard-num">10</div><p class="guard-text">Foto stock de pessoa segurando a cabeça em desespero.</p><div class="guard-status never">Nunca</div></div>
+      <div class="guard"><div class="guard-num">11</div><p class="guard-text">Cor primária pastel, lilás, gradiente roxo, ícones brilhantes.</p><div class="guard-status never">Nunca</div></div>
+      <div class="guard"><div class="guard-num">12</div><p class="guard-text">Palavras do <strong>vocabulário do não</strong> (ver capítulo 06) em qualquer peça oficial.</p><div class="guard-status never">Nunca</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 15 · COMPLIANCE ============= -->
+<section class="compliance">
+  <div class="wrap">
+    <div class="section-num" style="color: var(--bone); opacity: 1;">15 · Compliance Médica</div>
+    <div class="comp-card">
+      <h3>O que precisa estar <em style="font-style: italic; color: #D87F66;">resolvido</em> antes da próxima peça ir ao ar.</h3>
+      <p>Marca de médico opera sob regulação dupla — <strong>CFM (Conselho Federal de Medicina)</strong> e <strong>CDC (Código de Defesa do Consumidor)</strong>. Toda comunicação que infringe esses dois universos pode resultar em autuação, suspensão de exercício profissional e processos por publicidade enganosa.</p>
+      <p>Os pontos abaixo são <strong>pré-condição não-negociável</strong> para qualquer escala de tráfego pago, qualquer aparição pública, qualquer entrega de produto sob esta marca:</p>
+      <ol class="comp-list">
+        <li>Verificar se Dr. Thyago possui <strong>RQE em Psiquiatria</strong>. Se sim, exibir nos materiais. Se não, ajustar todas as menções para "médico com pós-graduação em psiquiatria pelo Hospital Albert Einstein" — sem usar o título "psiquiatra" como tal.</li>
+        <li>Substanciar todas as estatísticas (-68%, -70%, 8h+, 3.412 atendimentos) com <strong>fonte rastreável</strong> ou remover da comunicação. Estatística inventada em material de saúde é violação direta do CFM 1.974/2011.</li>
+        <li>Adicionar <strong>disclaimer médico padrão</strong> no rodapé de toda peça: "Este conteúdo não substitui consulta médica presencial. O protocolo Códigos da Mente é complementar e não interrompe tratamento prescrito."</li>
+        <li>Garantir que <strong>"Saturação Neural" seja apresentado como framework do método</strong>, não como diagnóstico médico oficial. A terminologia oficial CID/DSM permanece em paralelo, sempre que aplicável.</li>
+        <li>Toda menção a redução, descontinuação ou ajuste de medicação deve vir acompanhada da frase <strong>"sob supervisão médica direta"</strong>, sem exceção.</li>
+        <li>CRM de Dr. Thyago <strong>visível em todas as peças oficiais</strong>: site, anúncios, redes sociais, vídeos, e-mails comerciais, materiais impressos.</li>
+        <li>Depoimentos de pacientes seguem CFM: <strong>sem foto antes/depois clínico</strong>, sem promessa de resultado, com consentimento por escrito arquivado.</li>
+        <li>Termos de uso e política de privacidade da plataforma <strong>compliant com LGPD</strong>, especialmente quanto a dados de saúde (categoria sensível).</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============= CLOSE ============= -->
+<section class="close">
+  <div class="wrap">
+    <p class="close-quote">"Saúde mental premium não se vende com <em>conforto.</em><br>Se vende com <em>precisão.</em>"</p>
+    <div class="close-sig">
+      Sistema de Marca · Dr. Thyago Henrique
+      <strong>FGG Digital · 2026</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer class="foot">
+  <div>Brand Bible · v1.0 · Confidencial</div>
+  <div>FGG Digital · Geovane G. P. Lima</div>
+</footer>
+
+</body>
+</html>
