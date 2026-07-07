@@ -124,7 +124,7 @@ const Quiz = () => {
                 </button>
                 <button className="btn-ghost" onClick={reset}>Refazer diagnóstico</button>
               </div>
-              <p style={{ marginTop: 32, fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: '.18em', textTransform: 'uppercase', color: 'rgba(245,243,238,.4)' }}>
+              <p style={{ marginTop: 32, fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: '.18em', textTransform: 'uppercase', color: 'rgba(242,244,255,.4)' }}>
                 Este score é orientativo e não substitui avaliação médica presencial.
               </p>
             </div>
